@@ -1,53 +1,90 @@
-# TurtleBot3
-<img src="https://github.com/ROBOTIS-GIT/emanual/blob/master/assets/images/platform/turtlebot3/logo_turtlebot3.png" width="300">
 
-[![kinetic-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3/workflows/kinetic-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3/tree/kinetic-devel)
+# CREATE GAZEBO MAP
 
-[![melodic-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3/workflows/melodic-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3/tree/melodic-devel)
+Open Gazebo <br/>
+Edit -> Building Editor <br/>
+Wall <br/>
+Draw 10 x 10 box and any internal walls <br/>
+Save <br/>
+Exit Building Editor <br/>
 
-[![noetic-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3/workflows/noetic-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3/tree/noetic-devel)
 
-[![dashing-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3/workflows/dashing-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3/tree/dashing-devel)
+# CREATE RVIZ MAP
 
-[![foxy-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3/workflows/foxy-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3/tree/foxy-devel)
+rosrun map_server map_saver -f ~/sf_simulation
 
-[![galactic-devel Status](https://github.com/ROBOTIS-GIT/turtlebot3/workflows/galactic-devel/badge.svg)](https://github.com/ROBOTIS-GIT/turtlebot3/tree/galactic-devel)
 
-## ROBOTIS e-Manual for TurtleBot3
-- [ROBOTIS e-Manual for TurtleBot3](http://turtlebot3.robotis.com/)
+# TELEOPERATE TURTLEBOT
 
-## Wiki for turtlebot3 Packages
-- http://wiki.ros.org/turtlebot3 (metapackage)
-- http://wiki.ros.org/turtlebot3_bringup
-- http://wiki.ros.org/turtlebot3_description
-- http://wiki.ros.org/turtlebot3_example
-- http://wiki.ros.org/turtlebot3_navigation
-- http://wiki.ros.org/turtlebot3_slam
-- http://wiki.ros.org/turtlebot3_teleop
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 
-## Open Source related to TurtleBot3
-- [turtlebot3](https://github.com/ROBOTIS-GIT/turtlebot3)
-- [turtlebot3_msgs](https://github.com/ROBOTIS-GIT/turtlebot3_msgs)
-- [turtlebot3_simulations](https://github.com/ROBOTIS-GIT/turtlebot3_simulations)
-- [turtlebot3_applications_msgs](https://github.com/ROBOTIS-GIT/turtlebot3_applications_msgs)
-- [turtlebot3_applications](https://github.com/ROBOTIS-GIT/turtlebot3_applications)
-- [turtlebot3_autorace](https://github.com/ROBOTIS-GIT/turtlebot3_autorace)
-- [turtlebot3_deliver](https://github.com/ROBOTIS-GIT/turtlebot3_deliver)
-- [hls_lfcd_lds_driver](https://github.com/ROBOTIS-GIT/hls_lfcd_lds_driver)
-- [turtlebot3_manipulation](https://github.com/ROBOTIS-GIT/turtlebot3_manipulation.git)
-- [turtlebot3_manipulation_simulations](https://github.com/ROBOTIS-GIT/turtlebot3_manipulation_simulations.git)
-- [open_manipulator_msgs](https://github.com/ROBOTIS-GIT/open_manipulator_msgs)
-- [open_manipulator](https://github.com/ROBOTIS-GIT/open_manipulator)
-- [open_manipulator_simulations](https://github.com/ROBOTIS-GIT/open_manipulator_simulations)
-- [open_manipulator_perceptions](https://github.com/ROBOTIS-GIT/open_manipulator_perceptions)
-- [dynamixel_sdk](https://github.com/ROBOTIS-GIT/DynamixelSDK)
-- [OpenCR-Hardware](https://github.com/ROBOTIS-GIT/OpenCR-Hardware)
-- [OpenCR](https://github.com/ROBOTIS-GIT/OpenCR)
 
-## Documents and Videos related to TurtleBot3
-- [ROBOTIS e-Manual for TurtleBot3](http://turtlebot3.robotis.com/)
-- [ROBOTIS e-Manual for OpenManipulator](http://emanual.robotis.com/docs/en/platform/openmanipulator/)
-- [ROBOTIS e-Manual for Dynamixel SDK](http://emanual.robotis.com/docs/en/software/dynamixel/dynamixel_sdk/overview/)
-- [Website for TurtleBot Series](http://www.turtlebot.com/)
-- [e-Book for TurtleBot3](https://community.robotsource.org/t/download-the-ros-robot-programming-book-for-free/51/)
-- [Videos for TurtleBot3 ](https://www.youtube.com/playlist?list=PLRG6WP3c31_XI3wlvHlx2Mp8BYqgqDURU)
+# TEST SENSOR OUTPUTS
+
+rosrun rqt_gui rqt_gui
+
+
+# SIMULATION SETUP
+
+source /opt/ros/neotic/setup.bash <br/>
+mkdir -p ~/catkin_ws/src <br/>
+cd ~/catkin_ws/ <br/>
+catkin_make <br/>
+
+cd ~/src <br/>
+copy turtlebot3 folders here <br/>
+
+catkin_create_pkg sensor_fusion <br/>
+cd ~/sensor_fusion <br/>
+copy contents of sensor fusion folder here <br/>
+
+cd ../.. <br/>
+catkin_make <br/>
+
+
+# FILE LOCATIONS
+
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/launch/sf_world.launch <br/>
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/worlds/sf.world <br/>
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/sf_model/model.config <br/>
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/sf_model/model.sdf <br/>
+
+A copy of the files is in the simulation folder for easier viewing, but you need to <br/>
+modify the originals to change the launch files.
+
+Note: python_sim and ros_sim is old code, but it might be a good reference or starting
+point, so I included it too.
+
+
+# RUN SIMULATION
+
+TAB 1:
+
+source ~/.bashrc <br/>
+roscore
+
+
+TAB 2:
+
+roslaunch turtlebot3_gazebo sf_world.launch
+
+
+TAB 3:
+
+roslaunch turtlebot3_slam turtlebot3_slam.launch
+
+
+TAB 4:
+
+rosrun rviz rviz -d 'rospack find turtlebot3_slam'/rviz/turtlebot3_slam.rviz
+
+
+TAB 5:
+
+roslaunch turtlebot3_navigation amcl_demo.launch
+
+
+TAB 6:
+
+rosrun sensor_fusion navigate.py
+
