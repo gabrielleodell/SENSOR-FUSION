@@ -26,27 +26,37 @@ rosrun rqt_gui rqt_gui
 # SIMULATION SETUP
 
 source /opt/ros/neotic/setup.bash
+
 mkdir -p ~/catkin_ws/src
+
 cd ~/catkin_ws/
+
 catkin_make
 
 cd ~/src
+
 copy contents of turtlebot folder here
 
 
 catkin_create_pkg sensor_fusion 
+
 cd ~/sensor_fusion
 
 copy contents of sensor fusion folder here
+
 cd ../..
+
 catkin_make
 
 
 # FILE LOCATIONS
 
 catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/launch/sf_world.launch
+
 catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/worlds/sf.world
+
 catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/sf_model/model.config
+
 catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/sf_model/model.sdf
 
 A copy of the files is in the simulation folder for easier viewing, but you need to
