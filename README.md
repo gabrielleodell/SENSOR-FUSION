@@ -1,15 +1,16 @@
 
 # CREATE GAZEBO MAP
 
-Open Gazebo
-Edit -> Building Editor
-Wall
-Draw 10 x 10 box and any internal walls
-Save
-Exit Building Editor
+Open Gazebo <br/>
+Edit -> Building Editor <br/>
+Wall <br/>
+Draw 10 x 10 box and any internal walls <br/>
+Save <br/>
+Exit Building Editor <br/>
 
 
 # CREATE RVIZ MAP
+
 rosrun map_server map_saver -f ~/sf_simulation
 
 
@@ -25,41 +26,30 @@ rosrun rqt_gui rqt_gui
 
 # SIMULATION SETUP
 
-source /opt/ros/neotic/setup.bash
+source /opt/ros/neotic/setup.bash <br/>
+mkdir -p ~/catkin_ws/src <br/>
+cd ~/catkin_ws/ <br/>
+catkin_make <br/>
 
-mkdir -p ~/catkin_ws/src
+cd ~/src <br/>
+copy contents of turtlebot folder here <br/>
 
-cd ~/catkin_ws/
+catkin_create_pkg sensor_fusion <br/>
+cd ~/sensor_fusion <br/>
+copy contents of sensor fusion folder here <br/>
 
-catkin_make
-
-cd ~/src
-
-copy contents of turtlebot folder here
-
-
-catkin_create_pkg sensor_fusion 
-
-cd ~/sensor_fusion
-
-copy contents of sensor fusion folder here
-
-cd ../..
-
-catkin_make
+cd ../.. <br/>
+catkin_make <br/>
 
 
 # FILE LOCATIONS
 
-catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/launch/sf_world.launch
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/launch/sf_world.launch <br/>
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/worlds/sf.world <br/>
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/sf_model/model.config <br/>
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/sf_model/model.sdf <br/>
 
-catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/worlds/sf.world
-
-catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/sf_model/model.config
-
-catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/sf_model/model.sdf
-
-A copy of the files is in the simulation folder for easier viewing, but you need to
+A copy of the files is in the simulation folder for easier viewing, but you need to <br/>
 modify the originals to change the launch files.
 
 Note: python_sim and ros_sim is old code, but it might be a good reference or starting
