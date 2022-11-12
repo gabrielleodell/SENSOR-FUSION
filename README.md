@@ -32,7 +32,7 @@ cd ~/catkin_ws/ <br/>
 catkin_make <br/>
 
 cd ~/src <br/>
-copy contents of turtlebot folder here <br/>
+copy turtlebot3 folders here <br/>
 
 catkin_create_pkg sensor_fusion <br/>
 cd ~/sensor_fusion <br/>
