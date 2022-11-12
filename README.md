@@ -60,6 +60,7 @@ point, so I included it too.
 
 TAB 1:
 
+source ~/.bashrc <br/>
 roscore
 
 
