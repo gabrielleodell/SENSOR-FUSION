@@ -88,3 +88,8 @@ TAB 6:
 
 rosrun sensor_fusion navigate.py
 
+
+TAB 7:
+
+gz topic -e /gazebo/default/turtlebot3_waffle/base_footprint/ultrasonic/sonar
+
