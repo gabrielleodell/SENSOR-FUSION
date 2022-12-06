@@ -58,38 +58,38 @@ point, so I included it too.
 
 # RUN SIMULATION
 
-TAB 1:
+TAB 1: SETTINGS
 
 source ~/.bashrc <br/>
 roscore
 
 
-TAB 2:
+TAB 2: LAUNCH SIMULATION
 
 roslaunch turtlebot3_gazebo sf_world.launch
 
 
-TAB 3:
+TAB 3: START RVIZ
 
 roslaunch turtlebot3_slam turtlebot3_slam.launch
 
 
-TAB 4:
+TAB 4: RUN RVIZ
 
 rosrun rviz rviz -d 'rospack find turtlebot3_slam'/rviz/turtlebot3_slam.rviz
 
 
-TAB 5:
+TAB 5: RVIZ AMCL
 
 roslaunch turtlebot3_navigation amcl_demo.launch
 
 
-TAB 6:
+TAB 6: CUSTOM CODE
 
 rosrun sensor_fusion navigate.py
 
 
-TAB 7:
+TAB 7: SONAR TOPIC
 
 gz topic -e /gazebo/default/turtlebot3_waffle/base_footprint/ultrasonic/sonar
 
