@@ -44,9 +44,6 @@ catkin_make <br/>
 
 # OBSTACLE PLUGIN SETUP
 
-catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src/CollisionActorPlugin.cc <br/>
-catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src/CollisionActorPlugin.hh <br/>
-
 cd ~/catkin_ws/devel/lib <br/>
 sudo cp libCollisionActorPlugin.so /usr/lib/x86_64-linux-gnu/gazebo-11/plugins <br/>
 ls <br/>
@@ -55,10 +52,21 @@ Check that libCollisionActorPlugin.so appears in list (fine if it's in green) <b
 
 # FILE LOCATIONS
 
+Launch: <br/>
 catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/launch/sf_world.launch <br/>
+
+Models: <br/>
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/animated_box_x <br/>
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/animated_box_y <br/>
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/box <br/>
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/sf_model <br/>
+
+Obstacle Plugin: <br/>
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src/CollisionActorPlugin.cc <br/>
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src/CollisionActorPlugin.hh <br/>
+
+World: <br/>
 catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/worlds/sf.world <br/>
-catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/sf_model/model.config <br/>
-catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models/sf_model/model.sdf <br/>
 
 A copy of the files is in the simulation folder for easier viewing, but you need to <br/>
 modify the originals to change the launch files.
