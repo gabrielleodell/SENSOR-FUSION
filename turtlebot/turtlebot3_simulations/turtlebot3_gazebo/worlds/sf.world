@@ -653,10 +653,10 @@
         <collision name='Wall_1_Collision'>
           <geometry>
             <box>
-              <size>10 0.15 2.5</size>
+              <size>10 0.15 1</size>
             </box>
           </geometry>
-          <pose>0 0 1.25 0 -0 0</pose>
+          <pose>0 0 0.5 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -672,10 +672,10 @@
           </surface>
         </collision>
         <visual name='Wall_1_Visual'>
-          <pose>0 0 1.25 0 -0 0</pose>
+          <pose>0 0 0.5 0 -0 0</pose>
           <geometry>
             <box>
-              <size>10 0.15 2.5</size>
+              <size>10 0.15 1</size>
             </box>
           </geometry>
           <material>
@@ -699,10 +699,10 @@
         <collision name='Wall_2_Collision'>
           <geometry>
             <box>
-              <size>10 0.15 2.5</size>
+              <size>10 0.15 1</size>
             </box>
           </geometry>
-          <pose>0 0 1.25 0 -0 0</pose>
+          <pose>0 0 0.5 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -718,10 +718,10 @@
           </surface>
         </collision>
         <visual name='Wall_2_Visual'>
-          <pose>0 0 1.25 0 -0 0</pose>
+          <pose>0 0 0.5 0 -0 0</pose>
           <geometry>
             <box>
-              <size>10 0.15 2.5</size>
+              <size>10 0.15 1</size>
             </box>
           </geometry>
           <material>
@@ -745,10 +745,10 @@
         <collision name='Wall_3_Collision'>
           <geometry>
             <box>
-              <size>10 0.15 2.5</size>
+              <size>10 0.15 1</size>
             </box>
           </geometry>
-          <pose>0 0 1.25 0 -0 0</pose>
+          <pose>0 0 0.5 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -764,10 +764,10 @@
           </surface>
         </collision>
         <visual name='Wall_3_Visual'>
-          <pose>0 0 1.25 0 -0 0</pose>
+          <pose>0 0 0.5 0 -0 0</pose>
           <geometry>
             <box>
-              <size>10 0.15 2.5</size>
+              <size>10 0.15 1</size>
             </box>
           </geometry>
           <material>
@@ -791,10 +791,10 @@
         <collision name='Wall_4_Collision'>
           <geometry>
             <box>
-              <size>10 0.15 2.5</size>
+              <size>10 0.15 0</size>
             </box>
           </geometry>
-          <pose>0 0 1.25 0 -0 0</pose>
+          <pose>0 0 0.5 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -810,10 +810,10 @@
           </surface>
         </collision>
         <visual name='Wall_4_Visual'>
-          <pose>0 0 1.25 0 -0 0</pose>
+          <pose>0 0 0.5 0 -0 0</pose>
           <geometry>
             <box>
-              <size>10 0.15 2.5</size>
+              <size>10 0.15 1</size>
             </box>
           </geometry>
           <material>
@@ -841,13 +841,11 @@
     
     <include>
       <name>Box_1</name>
-      <pose>1 -1 0.25 0 0 0</pose>
       <uri>model://animated_box_x</uri>
     </include>
-      
+    
     <include>
       <name>Box_2</name>
-      <pose>6 -8 0.25 0 0 0</pose>
       <uri>model://animated_box_y</uri>
     </include>
     
@@ -859,10 +857,34 @@
     
     <include>
       <name>Box_4</name>
-      <pose>4 -8 0.25 0 0 0</pose>
+      <pose>5 -8 0.25 0 0 0</pose>
       <uri>model://box</uri>
     </include>  
-    
+
+    <include>
+      <name>Box_5</name>
+      <pose>1 -2 0.25 0 0 0</pose>
+      <uri>model://box</uri>
+    </include>  
+
+    <include>
+      <name>Box_6</name>
+      <pose>8 -2 0.25 0 0 0</pose>
+      <uri>model://box</uri>
+    </include>  
+
+    <include>
+      <name>Box_7</name>
+      <pose>7 -5 0.25 0 0 0</pose>
+      <uri>model://box</uri>
+    </include>  
+
+    <include>
+      <name>Box_8</name>
+      <pose>4 -1 0.25 0 0 0</pose>
+      <uri>model://box</uri>
+    </include>  
+
 
     <!-- WORLD SETUP -->
 
