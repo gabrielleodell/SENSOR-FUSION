@@ -45,7 +45,7 @@ catkin_package(
 )
 
 #############################
-##   Attach Model plugin   ##
+##   Attach Model Plugin   ##
 #############################
 
 include_directories(${GAZEBO_INCLUDE_DIRS})
@@ -67,6 +67,40 @@ install(TARGETS ${attach_model_plugin_name}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
 )
+
+#############################
+##  Actor Collision Plugin ##
+#############################
+
+set(actor_collision_plugin_name ActorCollisionsPlugin)
+add_library(${actor_collision_plugin_name} SHARED
+  src/ActorCollisionsPlugin.cc
+)
+
+target_link_libraries(${actor_collision_plugin_name}
+  ${GAZEBO_LIBRARIES}
+  ${roscpp_LIBRARIES}
+)
+
+set(collision_plugin_name CollisionActorPlugin)
+add_library(${collision_plugin_name} SHARED
+  src/CollisionActorPlugin.cc
+)
+
+target_link_libraries(${collision_plugin_name}
+  ${GAZEBO_LIBRARIES}
+  ${roscpp_LIBRARIES}
+)
+
+#############################
+##    Move Model Plugin    ##
+#############################
+
+add_executable(path_publisher src/path_publisher.cc)
+target_link_libraries(path_publisher ${GAZEBO_LIBRARIES})
+
+add_library(model_move SHARED src/model_move.cc)
+target_link_libraries(model_move ${GAZEBO_LIBRARIES})
 
 ################################################################################
 # Build
