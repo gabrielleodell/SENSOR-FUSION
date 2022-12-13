@@ -42,6 +42,17 @@ cd ../.. <br/>
 catkin_make <br/>
 
 
+# OBSTACLE PLUGIN SETUP
+
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src/CollisionActorPlugin.cc <br/>**
+catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/src/CollisionActorPlugin.hh <br/>**
+
+cd ~/catkin_ws/devel/lib <br/>
+sudo cp libCollisionActorPlugin.so /usr/lib/x86_64-linux-gnu/gazebo-11/plugins <br/>
+ls <br/>
+Check that libCollisionActorPlugin.so appears in list (fine if it's in green) <br/>
+
+
 # FILE LOCATIONS
 
 catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/launch/sf_world.launch <br/>
