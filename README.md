@@ -107,14 +107,7 @@ TAB 5: RVIZ AMCL
 roslaunch turtlebot3_navigation amcl_demo.launch
 
 
-
-TAB 6: CUSTOM CODE
-
-rosrun sensor_fusion navigate.py
-
-
-
-TAB 7: SONAR TOPIC
+TAB 6: SONAR TOPIC
 
 gz topic -e /gazebo/default/turtlebot3_waffle/base_footprint/ultrasonic/sonar
 
