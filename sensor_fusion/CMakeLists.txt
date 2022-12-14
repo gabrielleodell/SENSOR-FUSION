@@ -6,6 +6,8 @@ find_package(catkin REQUIRED COMPONENTS
   message_runtime
   rospy
   std_msgs
+  nav_msgs
+  gazebo_msgs
 )
 
 # Generate services in the 'srv' folder
@@ -18,6 +20,8 @@ find_package(catkin REQUIRED COMPONENTS
 generate_messages(
   DEPENDENCIES
   std_msgs
+  nav_msgs
+  gazebo_msgs
 )
 
 catkin_package(
@@ -34,5 +38,6 @@ include_directories(
 catkin_install_python(PROGRAMS
   ros_sim/navigate.py
   ros_sim/nav_to_goal.py
+  model_states/boxes.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
