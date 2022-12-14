@@ -16,6 +16,8 @@
   <param name="robot_description" command="$(find xacro)/xacro --inorder $(find turtlebot3_description)/urdf/turtlebot3_$(arg model).urdf.xacro" />
 
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
-    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="publish_frequency" type="double" value="50.0"/>
   </node>
+
+  <node pkg="sensor_fusion" name="boxes" type="boxes.py" output="screen" />
 </launch>
