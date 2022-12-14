@@ -111,3 +111,13 @@ TAB 6: SONAR TOPIC
 
 gz topic -e /gazebo/default/turtlebot3_waffle/base_footprint/ultrasonic/sonar
 
+
+
+TAB 7: MOVING BOX X TOPIC
+
+rostopic echo /box_x
+
+
+TAB 8: MOVING BOX Y TOPIC
+
+rostopic echo /box_y
