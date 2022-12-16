@@ -1,29 +1,3 @@
-
-# CREATE GAZEBO MAP
-
-Open Gazebo <br/>
-Edit -> Building Editor <br/>
-Wall <br/>
-Draw 10 x 10 box and any internal walls <br/>
-Save <br/>
-Exit Building Editor <br/>
-
-
-# CREATE RVIZ MAP
-
-rosrun map_server map_saver -f ~/sf_simulation
-
-
-# TELEOPERATE TURTLEBOT
-
-roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
-
-
-# TEST SENSOR OUTPUTS
-
-rosrun rqt_gui rqt_gui
-
-
 # SIMULATION SETUP
 
 source /opt/ros/neotic/setup.bash <br/>
@@ -71,8 +45,10 @@ catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/worlds/sf.world <br/>
 A copy of the files is in the simulation folder for easier viewing, but you need to <br/>
 modify the originals to change the launch files.
 
-Note: python_sim and ros_sim is old code, but it might be a good reference or starting
-point, so I included it too.
+
+# TELEOPERATE TURTLEBOT
+
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
 
 
 # RUN SIMULATION
@@ -83,41 +59,25 @@ source ~/.bashrc <br/>
 roscore
 
 
-
 TAB 2: LAUNCH SIMULATION
 
 roslaunch turtlebot3_gazebo sf_world.launch
 
 
-
-TAB 3: START RVIZ
-
-roslaunch turtlebot3_slam turtlebot3_slam.launch
+TAB 3: Kalman Filter
+rosrun turtlebot3_sensorFusion turtlebot3_kf
 
 
+TAB 4: SONAR TOPIC
 
-TAB 4: RUN RVIZ
-
-rosrun rviz rviz -d 'rospack find turtlebot3_slam'/rviz/turtlebot3_slam.rviz
-
+rostopic echo /sonae
 
 
-TAB 5: RVIZ AMCL
-
-roslaunch turtlebot3_navigation amcl_demo.launch
-
-
-TAB 6: SONAR TOPIC
-
-gz topic -e /gazebo/default/turtlebot3_waffle/base_footprint/ultrasonic/sonar
-
-
-
-TAB 7: MOVING BOX X TOPIC
+TAB 5: MOVING BOX X TOPIC
 
 rostopic echo /box_x
 
 
-TAB 8: MOVING BOX Y TOPIC
+TAB 6: MOVING BOX Y TOPIC
 
 rostopic echo /box_y
