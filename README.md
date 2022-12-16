@@ -46,11 +46,6 @@ A copy of the files is in the simulation folder for easier viewing, but you need
 modify the originals to change the launch files.
 
 
-# TELEOPERATE TURTLEBOT
-
-roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
-
-
 # RUN SIMULATION
 
 TAB 1: SETTINGS
@@ -64,7 +59,13 @@ TAB 2: LAUNCH SIMULATION
 roslaunch turtlebot3_gazebo sf_world.launch
 
 
-TAB 3: Kalman Filter
+TAB 3: TELEOPERATE TURTLEBOT
+
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+
+TAB 3: KALMAN FILTER
+
 rosrun turtlebot3_sensorFusion turtlebot3_kf
 
 
