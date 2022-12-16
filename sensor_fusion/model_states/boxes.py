@@ -27,23 +27,26 @@ header_y.frame_id='/odom'
 model_y = GetModelStateRequest()
 model_y.model_name='Box_2'
 
+try:
+    while not rospy.is_shutdown():
 
-while not rospy.is_shutdown():
+        # Run x
+        result_x = get_model_srv(model_x)
+        odom_x.pose.pose = result_x.pose
+        odom_x.twist.twist = result_x.twist
+        header_x.stamp = rospy.Time.now()
+        odom_x.header = header_x
+        odom_pub_x.publish(odom_x)
 
-    # Run x
-    result_x = get_model_srv(model_x)
-    odom_x.pose.pose = result_x.pose
-    odom_x.twist.twist = result_x.twist
-    header_x.stamp = rospy.Time.now()
-    odom_x.header = header_x
-    odom_pub_x.publish(odom_x)
+        # Run y
+        result_y = get_model_srv(model_y)
+        odom_y.pose.pose = result_y.pose
+        odom_y.twist.twist = result_y.twist
+        header_y.stamp = rospy.Time.now()
+        odom_y.header = header_y
+        odom_pub_y.publish(odom_y)
 
-    # Run y
-    result_y = get_model_srv(model_y)
-    odom_y.pose.pose = result_y.pose
-    odom_y.twist.twist = result_y.twist
-    header_y.stamp = rospy.Time.now()
-    odom_y.header = header_y
-    odom_pub_y.publish(odom_y)
+        r.sleep()
 
-    r.sleep()
+except rospy.ROSInterruptException:
+    pass
