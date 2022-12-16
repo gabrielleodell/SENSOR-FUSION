@@ -1,34 +1,29 @@
 <?xml version="1.0"?>
 <package format="2">
-
-    <name>turtlebot3_sensorFusion</name>
-    <version>0.0.0</version>
-    <description>The RBE595 project</description>
-    <url type="website">git</url>
-    <maintainer email="ejayaraju@wpi.edu">emmanuel</maintainer>
-    <author email="ejayaraju@wpi.edu">Emmanuel</author>
-    <license>TODO</license>
-
-    <buildtool_depend>catkin</buildtool_depend>
-    <depend>roscpp</depend>
-    <depend>rospy</depend>
-    <depend>std_msgs</depend>
-    <depend>sensor_msgs</depend>
-    <depend>nav_msgs</depend>
-    <depend>geometry_msgs</depend>
-    <depend>tf2_ros</depend>
-    <!-- Following 3 dependecies to write our own controller -->
-    <depend>controller_interface</depend>
-    <depend>hardware_interface</depend>
-    <depend>pluginlib</depend>
-    
-    <build_depend>message_generation</build_depend>
-    <exec_depend>message_runtime</exec_depend>
-    
-    <!-- 
-    <export>
-    	<controller_interface plugin="${prefix}/scara_gazebo/plugins/controller_plugins.xml" />
-    </export> 
-    -->
-
+  <name>turtlebot3</name>
+  <version>1.2.6</version>
+  <description>
+    ROS packages for the Turtlebot3 (meta package)
+  </description>
+  <license>Apache 2.0</license>
+  <license>BSD</license>
+  <author email="pyo@robotis.com">Pyo</author>
+  <author email="thlim@robotis.com">Darby Lim</author>
+  <author email="kkjong@robotis.com">Gilbert</author>
+  <author email="chc@robotis.com">HanCheol Cho</author>
+  <author email="ashekim@robotis.com">Ashe Kim</author>
+  <author>Leon Jung</author>
+  <maintainer email="willson@robotis.com">Will Son</maintainer>
+  <url type="website">http://wiki.ros.org/turtlebot3</url>
+  <url type="emanual">http://turtlebot3.robotis.com</url>
+  <url type="repository">https://github.com/ROBOTIS-GIT/turtlebot3</url>
+  <url type="bugtracker">https://github.com/ROBOTIS-GIT/turtlebot3/issues</url>
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>turtlebot3_bringup</exec_depend>
+  <exec_depend>turtlebot3_description</exec_depend>
+  <exec_depend>turtlebot3_example</exec_depend>
+  <exec_depend>turtlebot3_navigation</exec_depend>
+  <exec_depend>turtlebot3_slam</exec_depend>
+  <exec_depend>turtlebot3_teleop</exec_depend>
+  <export><metapackage/></export>
 </package>
