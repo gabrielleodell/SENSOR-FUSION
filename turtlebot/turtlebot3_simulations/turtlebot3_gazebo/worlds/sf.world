@@ -335,12 +335,12 @@
         </sensor>
         <sensor name='imu' type='imu'>
           <always_on>1</always_on>
-          <visualize>0</visualize>
+          <visualize>1</visualize>
           <pose>0 0 0.078 0 -0 0</pose>
           <imu/>
         </sensor>
         <sensor name='lds_lfcd_sensor' type='ray'>
-          <visualize>0</visualize>
+          <visualize>1</visualize>
           <update_rate>5</update_rate>
           <ray>
             <scan>
@@ -375,20 +375,37 @@
           <pose>-0.064 0 0.132 0 -0 0</pose>
         </sensor>
 
+
         <!-- ULTRASONIC SENSOR SETUP -->
 
-        <sensor name='ultrasonic' type='sonar'>
-          <pose>0 0 0.08 0 -1.57 0</pose>
+        <sensor name='ultrasonic' type='ray'>
+          <pose>0 0 0.08 0 0 0</pose>
           <alwaysOn>1</alwaysOn>
           <update_rate>0</update_rate>    
-          <visualize>true</visualize>
+          <visualize>1</visualize>
           <topicName>sonar</topicName>
           <serviceName>sonar_service</serviceName>
-          <sonar>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>10</samples>
+                <resolution>1</resolution> 
+                <min_angle>-0.01</min_angle>
+                <max_angle>0.1</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>10</samples>
+                <resolution>1</resolution> 
+                <min_angle>-0.01</min_angle>
+                <max_angle>0.05</max_angle> 
+              </vertical>
+            </scan>
+            <range>
               <min>0.1</min>
-              <max>1.25</max>
-              <radius>0.05</radius>
-          </sonar>  
+              <max>2.5</max>
+              <resolution>0.02</resolution>
+            </range>
+          </ray>
           <visual name='visual'>
             <geometry>
               <box>
@@ -407,7 +424,7 @@
               <izz>1e-6</izz>
             </inertia>
           </inertial>
-          <plugin name='sonar_controller' filename='libgazebo_ros_sonar.so'>
+          <plugin name='sonar_controller' filename='libgazebo_ros_range.so'>
             <alwaysOn>1</alwaysOn>
             <gaussianNoise>0.0</gaussianNoise>
             <updateRate>0</updateRate>    
@@ -415,6 +432,7 @@
             <topicName>sonar</topicName>
             <serviceName>sonar_service</serviceName>
             <robotNamespace>/</robotNamespace>
+            <fov>0.05</fov>
           </plugin>
         </sensor>
 
