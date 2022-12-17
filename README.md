@@ -16,6 +16,12 @@ cd ../.. <br/>
 catkin_make <br/>
 
 
+# CHANGE PATH
+
+In sf.world, there are five absolute paths for the TurtleBot model. Replace with <br/>
+your path to turtlebot3_description. Located in Lines 257, 272, 281, 511, 593.
+
+
 # OBSTACLE PLUGIN SETUP
 
 cd ~/catkin_ws/devel/lib <br/>
